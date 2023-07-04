@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+}
+
+.cards {
+    padding: 5rem;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.cards > * {
+    flex-basis: 6rem;
+    transition: flex 0.3s;
+}
+
+.expanded {
+    flex-grow: 1;
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    border-radius: 3rem;
+    cursor: pointer;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card__heading {
+    color: aliceblue;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 2rem;
+    opacity: 0;
+    position: absolute;
+}
+
+.show-heading {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.card:nth-of-type(1) {
+    background-image: url(https://images.unsplash.com/photo-1498855926480-d98e83099315?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+}
+
+.card:nth-of-type(2) {
+    background-image: url(https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80);
+}
+
+.card.card:nth-of-type(3) {
+    background-image: url(https://images.unsplash.com/photo-1476067897447-d0c5df27b5df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+}
+
+.card:nth-of-type(4) {
+    background-image: url(https://images.unsplash.com/photo-1429041966141-44d228a42775?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+}
+
+.card:nth-of-type(5) {
+    background-image: url(https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1042&q=80);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
