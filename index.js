@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll(".card");
 
 cards[0].classList.add("expanded");
+cards[0].querySelector(".card__heading").classList.add("show-heading");
 
 const collapseAll = () => {
     cards.forEach(card => {
@@ -11,10 +12,16 @@ const collapseAll = () => {
 
 cards.forEach(card => {
     card.addEventListener("click", e => {
-        collapseAll();
-        e.target.classList.add("expanded");
-        setTimeout(() => {
-            card.querySelector(".card__heading").classList.add("show-heading");
-        }, 150);
+
+        const isExpanded = e.target.classList.contains("expanded");
+        const isCard = e.target.classList.contains("card");
+
+        if (isCard && !isExpanded) {
+            collapseAll();
+            e.target.classList.add("expanded");
+            setTimeout(() => {
+                card.querySelector(".card__heading").classList.add("show-heading");
+            }, 150);
+        }
     });
 });
